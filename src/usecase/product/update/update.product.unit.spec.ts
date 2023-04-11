@@ -16,9 +16,12 @@ describe('Update Product', () => {
     it('should update a product', async () => {
         const repository = MockRepository();
         const updateProduct = new UpdateProductUseCase(repository);
-        const output = await updateProduct.execute(product);
-        expect(output.id).toBe(product.id);
-        expect(output.name).toBe(product.name);
-        expect(output.price).toBe(product.price);
+        
+        const p = new Product("1", "Product 2", 100);
+        const output = await updateProduct.execute(p);
+        
+        expect(output.id).toBe(p.id);
+        expect(output.name).toBe(p.name);
+        expect(output.price).toBe(p.price);
     })
 })
