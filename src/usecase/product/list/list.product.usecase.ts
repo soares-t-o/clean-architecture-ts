@@ -13,7 +13,7 @@ export class ListProductUseCase{
     async execute(input: InputListProductDto): Promise<OutputListProductDto> {
         const products = await this.productRepository.findAll();
         return {
-            product: products.map(products => ({
+            products: products.map(products => ({
                 id: products.id,
                 name: products.name,
                 price: products.price

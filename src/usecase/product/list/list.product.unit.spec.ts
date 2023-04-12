@@ -17,12 +17,12 @@ describe('ListProduct', () => {
         const repository = MockRepository();
         const products = new ListProductUseCase(repository);
         const output = await products.execute({});
-        expect(output.product.length).toBe(2);
-        expect(output.product[0].id).toBe(product_1.id);
-        expect(output.product[0].name).toBe(product_1.name);
-        expect(output.product[0].price).toBe(product_1.price);
-        expect(output.product[1].id).toBe(product_2.id);
-        expect(output.product[1].name).toBe(product_2.name);
-        expect(output.product[1].price).toBe(product_2.price);
+        expect(output.products.length).toBe(2);
+        expect(output.products[0].id).toBe(product_1.id);
+        expect(output.products[0].name).toBe(product_1.name);
+        expect(output.products[0].price).toBe(product_1.price);
+        expect(output.products[1].id).toBe(product_2.id);
+        expect(output.products[1].name).toBe(product_2.name);
+        expect(output.products[1].price).toBe(product_2.price);
     })
 })
